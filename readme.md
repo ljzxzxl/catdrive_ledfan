@@ -31,4 +31,4 @@ CPU温度达到危险温度时，立即关机
 蓝色LED：表示工作状态  
 蓝色呼吸：表示待机状态（硬盘休眠）  
 
-#### 脚本修改于简书（https://www.jianshu.com/p/d2316ae1a0e5）  
+#### 脚本修改于简书 https://www.jianshu.com/p/d2316ae1a0e5  
