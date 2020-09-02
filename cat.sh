@@ -62,6 +62,7 @@ then
   echo 1 > /sys/class/leds/blue/blink
 else
   #echo "LED -> blue"
+  echo 0 > /sys/class/leds/green/brightness
   echo 100 > /sys/class/leds/blue/brightness
 fi
 } #end function
