@@ -1,11 +1,11 @@
 #! /bin/bash
 DISK="/dev/sda"
 FAN_DEVICE=/sys/class/thermal/cooling_device0/cur_state
-LOOP_TIME=30
+LOOP_TIME=15
 # disk temperature alert level
 T_SHUTDOWN=65
-T_HIGH=45
-T_LOW=40
+T_HIGH=40
+T_LOW=38
 # command
 LOG=/usr/bin/logger
 
@@ -40,7 +40,7 @@ then
     echo 1 > $FAN_DEVICE
   fi
   #echo "turn on red LED"
-  echo 255 > /sys/class/leds/red/brightness
+  echo 1 > /sys/class/leds/red/blink
   return
 fi
 
@@ -53,16 +53,16 @@ then
     echo 0 > $FAN_DEVICE
   fi
   #echo "turn off red led"
-  echo 0 > /sys/class/leds/red/brightness
+  echo 0 > /sys/class/leds/red/blink
 fi
 
 if [ $DISK_STATUS = "STANDBY" -o $DISK_STATUS = "SLEEP" ]
 then
-  #echo "LED -> blink green"
-  echo 2 > /sys/class/leds/green/blink
+  #echo "LED -> blink blue"
+  echo 100 > /sys/class/leds/blue/brightness
 else
-  #echo "LED -> green"
-  echo 255 > /sys/class/leds/green/brightness
+  #echo "LED -> blue"
+  echo 1 > /sys/class/leds/blue/blink
 fi
 } #end function
 

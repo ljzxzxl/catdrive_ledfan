@@ -59,10 +59,10 @@ fi
 if [ $DISK_STATUS = "STANDBY" -o $DISK_STATUS = "SLEEP" ]
 then
   #echo "LED -> blink blue"
-  echo 1 > /sys/class/leds/blue/blink
+  echo 100 > /sys/class/leds/blue/brightness
 else
   #echo "LED -> blue"
-  echo 100 > /sys/class/leds/blue/brightness
+  echo 1 > /sys/class/leds/blue/blink
 fi
 } #end function
 
