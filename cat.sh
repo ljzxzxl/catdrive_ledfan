@@ -40,6 +40,7 @@ then
     echo 1 > $FAN_DEVICE
   fi
   #echo "turn on red LED"
+  echo 0 > /sys/class/leds/blue/brightness
   echo 1 > /sys/class/leds/red/blink
   return
 fi
