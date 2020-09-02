@@ -4,7 +4,7 @@
 
 ## 脚本说明
 使用前需先执行  
-> apt-get install lm-sensors
+> apt-get install lm-sensors  
 请自行设置为开机运行脚本  
 检测间隔时间15秒  
 温度高于65°关机  
